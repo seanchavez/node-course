@@ -1,9 +1,8 @@
+const validator = require('validator');
 const getNotes = require('./notes.js');
 
-console.log(getNotes());
+const msg = getNotes();
 
-// const add = require('./utils');
+console.log(msg);
 
-// const sum = add(4, -2);
-
-// console.log(sum);
+console.log(validator.isURL('https/broman.com'));
