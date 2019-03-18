@@ -1,5 +1,22 @@
+const fs = require("fs");
+
 function getNotes() {
-  return 'Your notes...';
+  return "Your notes...";
 }
 
-module.exports = getNotes;
+const addNote = function(title, body) {
+  const notes = loadNotes();
+  console.log(notes);
+};
+
+const loadNotes = () => {
+  try {
+    const dataBuffer = fs.readFileSync("notes.json");
+    const dataJSON = dataBuffer.toString();
+    return JSON.parse(dataJSON);
+  } catch (error) {
+    return [];
+  }
+};
+
+module.exports = { getNotes, addNote };
