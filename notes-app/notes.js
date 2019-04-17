@@ -4,6 +4,10 @@ function getNotes() {
   return "Your notes...";
 }
 
+const removeNote = title => {
+  console.log(title);
+};
+
 const addNote = function(title, body) {
   const notes = loadNotes();
   const duplicateNotes = notes.filter(note => {
@@ -37,4 +41,4 @@ const loadNotes = () => {
   }
 };
 
-module.exports = { getNotes, addNote };
+module.exports = { getNotes, addNote, removeNote };
