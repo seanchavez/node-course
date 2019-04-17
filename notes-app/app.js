@@ -4,6 +4,21 @@ const notes = require("./notes.js");
 yargs.version("1.1.0");
 
 yargs.command({
+  command: "read",
+  describe: "Reads a note",
+  builder: {
+    title: {
+      describe: "Note title",
+      demandOption: true,
+      type: "string"
+    }
+  },
+  handler(argv) {
+    notes.readNote(argv.title);
+  }
+});
+
+yargs.command({
   command: "add",
   describe: "Add a new note",
   builder: {
@@ -42,14 +57,6 @@ yargs.command({
   builder: {},
   handler() {
     notes.listNotes();
-  }
-});
-
-yargs.command({
-  command: "read",
-  describe: "Read a note",
-  handler() {
-    console.log("Reading a note.");
   }
 });
 
