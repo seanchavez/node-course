@@ -3,6 +3,14 @@ const chalk = require("chalk");
 
 const getNotes = () => "Your notes...";
 
+const listNotes = () => {
+  console.log(chalk.blue.underline("Your Notes: "));
+  const notes = loadNotes();
+  notes.forEach(note => {
+    console.log(note);
+  });
+};
+
 const removeNote = title => {
   const notes = loadNotes();
   const notesToKeep = notes.filter(note => note.title !== title);
@@ -43,4 +51,4 @@ const loadNotes = () => {
   }
 };
 
-module.exports = { getNotes, addNote, removeNote };
+module.exports = { getNotes, addNote, removeNote, listNotes };
