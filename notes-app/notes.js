@@ -1,7 +1,7 @@
 const fs = require("fs");
 const chalk = require("chalk");
 
-const getNotes = () => "Here are your notes...";
+const getNotes = () => "Here are your notes dummy...";
 
 const listNotes = () => {
   console.log(chalk.blue.underline("Your Notes: "));
